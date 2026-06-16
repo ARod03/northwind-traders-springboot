@@ -3,21 +3,23 @@ package com.pluralsight.northwind_traders_springboot.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name = "Products")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productID;
-    private String name;
-    private String category;
-    private double price;
 
-    public Product(Long productID, String name, String category, double price) {
-        this.productID = productID;
-        this.name = name;
-        this.category = category;
-        this.price = price;
-    }
+    @Column(name = "ProductID")
+    private Long productID;
+
+    @Column(name = "ProductName")
+    private String name;
+
+    @Column(name = "CategoryID")
+    private String category;
+
+    @Column(name = "UnitPrice")
+    private double price;
 
     public Long getProductID() {
         return productID;
